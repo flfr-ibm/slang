@@ -169,8 +169,7 @@ public class GoConverter implements ASTConverter {
       } else {
         if (arch == "s390x") {
           return "sonar-go-to-slang-linux-s390x";
-        }
-        else {
+        } else {
           return "sonar-go-to-slang-linux-amd64";
         }
       }
