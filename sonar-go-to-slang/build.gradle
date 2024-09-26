@@ -38,6 +38,6 @@ goBuild.dependsOn generateTestReport
 generateTestReport.dependsOn goTest
 
 goBuild {
-  targetPlatform = ['linux-amd64', 'windows-amd64', 'darwin-amd64']
+  targetPlatform = ['linux-amd64', 'windows-amd64', 'darwin-amd64', 'linux-s390x']
   outputLocation = './build/sonar-go-to-slang-${GOOS}-${GOARCH}${GOEXE}'
 }

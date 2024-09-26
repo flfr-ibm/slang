@@ -160,12 +160,18 @@ public class GoConverter implements ASTConverter {
 
     static String getExecutableForCurrentOS(String osName) {
       String os = osName.toLowerCase(Locale.ROOT);
+      String arch = System.getProperty("os.arch").toLowerCase(Locale.ROOT);
+
       if (os.contains("win")) {
         return "sonar-go-to-slang-windows-amd64.exe";
       } else if (os.contains("mac")) {
         return "sonar-go-to-slang-darwin-amd64";
       } else {
-        return "sonar-go-to-slang-linux-amd64";
+        if (arch == "s390x") {
+          return "sonar-go-to-slang-linux-s390x";
+        } else {
+          return "sonar-go-to-slang-linux-amd64";
+        }
       }
     }
   }
